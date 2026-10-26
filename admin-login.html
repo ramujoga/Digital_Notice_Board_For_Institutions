@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Campus Notice Board</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i> Campus Notice Board
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="notices.html">Public Notices</a></li>
+                <li><a href="about.html">About System</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="auth-card">
+            <h2 style="margin-bottom: 0.5rem; text-align: center;">Administrator Portal</h2>
+            <p style="color: var(--text-muted); text-align: center; margin-bottom: 1.5rem; font-size: 0.875rem;">Login
+                to post, manage, and delete notices</p>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" value="admin" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" value="admin123" required>
+                </div>
+                <div id="loginError" style="color:#ef4444; font-size:0.85rem; margin-bottom:1rem;"></div>
+                <button type="submit" class="btn-primary"
+                    style="width: 100%; border: none; padding: 0.75rem; cursor: pointer;">Login to Panel</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Campus Digital Notice Board System. Designed for Colleges & Institutions.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

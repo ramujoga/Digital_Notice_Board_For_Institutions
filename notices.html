@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Notices - Campus Board</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i> Campus Notice Board
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="notices.html">Public Notices</a></li>
+                <li><a href="about.html">About System</a></li>
+                <li><a href="admin-login.html" class="btn-primary">Admin Portal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 style="margin-bottom: 0.5rem;">Public Notice Board</h1>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Filter announcements by department category or
+            search by keywords.</p>
+
+        <div class="controls-bar">
+            <div style="flex: 1; max-width: 350px;">
+                <input type="text" id="searchInput" class="search-input"
+                    placeholder="Search notices by title or text...">
+            </div>
+            <div class="filter-group">
+                <button class="filter-btn active" data-category="All">All</button>
+                <button class="filter-btn" data-category="Academic">Academic</button>
+                <button class="filter-btn" data-category="Events">Events</button>
+                <button class="filter-btn" data-category="Sports">Sports</button>
+                <button class="filter-btn" data-category="Exam">Exam</button>
+                <button class="filter-btn" data-category="General">General</button>
+            </div>
+        </div>
+
+        <div class="notice-grid" id="noticesContainer"></div>
+    </main>
+
+    <div class="modal-overlay" id="noticeModal">
+        <div class="modal">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <div id="modalBadge" style="margin-bottom:0.5rem;"></div>
+            <h2 id="modalTitle" style="margin-bottom:0.25rem;"></h2>
+            <small id="modalMeta" style="color:var(--text-muted); display:block; margin-bottom:1rem;"></small>
+            <p id="modalContent" style="white-space: pre-line;"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Campus Digital Notice Board System. Designed for Colleges & Institutions.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

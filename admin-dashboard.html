@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Campus Notice Board</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i> Admin Management Panel
+            </a>
+            <ul class="nav-links">
+                <li><a href="notices.html" target="_blank"><i class="fa-solid fa-external-link"></i> Live Board</a></li>
+                <li><button onclick="logoutAdmin()" class="btn-secondary">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="admin-grid">
+
+            <!-- Notice Creation Form -->
+            <div
+                style="background: var(--bg-card); padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--radius);">
+                <h3 style="margin-bottom: 1rem;">Post New Notice</h3>
+                <form id="addNoticeForm" onsubmit="createNotice(event)">
+                    <div class="form-group">
+                        <label for="title">Notice Title</label>
+                        <input type="text" id="title" required placeholder="e.g. Mid-Term Timetable Released">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <option value="Academic">Academic</option>
+                            <option value="Exam">Exam</option>
+                            <option value="Events">Events</option>
+                            <option value="Sports">Sports</option>
+                            <option value="General">General</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <input type="text" id="department" required placeholder="e.g. Computer Science">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="priority">Priority Badge</label>
+                        <select id="priority" required>
+                            <option value="Normal">Normal</option>
+                            <option value="Urgent">Urgent</option>
+                            <option value="Info">Info</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content">Notice Content</label>
+                        <textarea id="content" rows="4" required
+                            placeholder="Enter complete notice details..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary"
+                        style="width: 100%; border: none; padding: 0.6rem; cursor: pointer;">Publish Notice</button>
+                </form>
+            </div>
+
+            <!-- Published Notices Table -->
+            <div>
+                <h3 style="margin-bottom: 1rem;">Published Notices</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Department</th>
+                                <th>Priority</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Campus Digital Notice Board System. Administrator View.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
